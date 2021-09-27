@@ -24,12 +24,12 @@ const workoutSchema = new Schema({
   sets: {
     type: Number,
   },
+  duration: {
+    type: Number,
+  },
   date: {
     type: Date,
     default: Date.now,
-  },
-  duration: {
-    type: Number,
   },
 });
 
