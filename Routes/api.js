@@ -3,33 +3,35 @@ const router = require('express').Router();
 const path = require("path");
 
 //get workouts route
-router.get('/api/workouts', (req, res) => {
-  db.Workout.find({})
-    .then((workoutDB) => {
-      workoutDB.forEach((workout) => {
-        let total = 0;
-        workout.exercises.forEach((e) => {
-          total += e.duration;
-        });
-        workout.totalDuration = total;
-      });
-
-      res.json(workoutDB);
-    })
-    .catch((err) => {
-      res.json(err);
-    });
+router.get("/api/workouts", (req, res) => {
+	db.Workout.find()
+		.then((workoutDB) => {
+			res.json(workoutDB);
+		})
+		.catch((err) => {
+			res.json(err);
+		});
 });
 
 //add exercise
-router.put('/api/workouts/:id', ({ body, params }, res) => {
-  db.findByIdAndUpdate(params.id, { $push: { exercises: body } })
-    .then((workoutDB) => {
-      res.json(workoutDB);
-    })
-    .catch((err) => {
-      res.json(err);
-    });
+router.put("/api/workouts/:id", ({ body, params }, res) => {
+	db.Workout.findByIdAndUpdate(params.id, { $push: { exercises: body } })
+		.then((workoutDB) => {
+			res.json(workoutDB);
+		})
+		.catch((err) => {
+			res.json(err);
+		});
+});
+
+router.get("/api/workouts/range", (req, res) => {
+	db.Workout.find()
+		.then((workoutDB) => {
+			res.json(workoutDB);
+		})
+		.catch((err) => {
+			res.json(err);
+		});
 });
 
 // GET Home page
