@@ -1,5 +1,5 @@
 # WorkoutTracker
-Workout tracker built with express, and a NoSQL database with mongoose.
+Workout tracker built with express, and a NoSQL mongoDB database
 
 ## Table of Contents
 - [License](#license)
