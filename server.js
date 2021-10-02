@@ -26,6 +26,11 @@ mongoose.connect(
 // routes
 app.use(require("./Routes/api.js"));
 
+app.get('*', function (req, res) {
+  const index = path.join(__dirname, 'build', 'index.html');
+  res.sendFile(index);
+});
+
 app.listen(PORT, () => {
   console.log(`App running on port ${PORT}!`);
 });
