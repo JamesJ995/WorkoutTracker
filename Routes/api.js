@@ -46,7 +46,7 @@ router.put('/api/workouts/:id', ({ body, params }, res) => {
   db.findByIdAndUpdate(
     params.id,
     { 
-      $inc: { totalDuration: req.body.duration },
+      $inc: { totalDuration: body.duration },
       $push: { exercises: body } 
     },
     { new: true, runValidator: true }
