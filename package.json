@@ -1,5 +1,5 @@
 {
-  "name": "mongoose_skeleton",
+  "name": "fitness-tracker",
   "version": "1.0.0",
   "description": "",
   "main": "server.js",
@@ -7,11 +7,7 @@
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "node server.js",
     "watch": "nodemon server.js",
-    "seed": "node seeders/seed.js",
-    "build": "npm run build",
-    "install": "npm install",
-    "heroku-postbuild": "NPM_CONFIG_PRODUCTION=false npm install --prefix npm run build",
-    "server": "nodemon server"
+    "seed": "node seeders/seed.js"
   },
   "author": "",
   "license": "ISC",
