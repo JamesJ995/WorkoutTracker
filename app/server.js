@@ -24,7 +24,7 @@ mongoose.connect(
 );
 
 // routes
-app.use(require("./Routes/api.js"));
+app.use(require("./routes/api.js"));
 
 app.get('*', function (req, res) {
   const index = path.join(__dirname, 'build', 'index.html');
